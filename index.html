@@ -631,11 +631,15 @@
         padding: 55px 0;
       }
 
-      .trust-grid,
-      .services-grid,
-      .steps {
-        grid-template-columns: 1fr;
-      }
+      .trust-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.services-grid,
+.steps {
+  grid-template-columns: 1fr;
+}
 
       .service-card p {
         min-height: auto;
