@@ -294,7 +294,27 @@
       </button>
 
     </form>
+<div id="successMessage" style="display:none; margin-top:20px; padding:20px; background:#eaf8ee; border-radius:14px; text-align:center;">
 
+  <div style="font-size:22px; font-weight:700; margin-bottom:10px;">
+    ✅ Заявка принята!
+  </div>
+
+  <div style="font-size:16px; line-height:1.5; margin-bottom:18px;">
+    Спасибо! Мы свяжемся с вами в ближайшее время.
+  </div>
+
+  <a href="tel:+79654738044"
+     style="display:block; margin:10px 0; padding:14px; background:white; color:#102a43; text-decoration:none; border-radius:10px; font-weight:700;">
+    📞 Позвонить
+  </a>
+
+  <a href="https://t.me/Nik_Yemilin"
+     style="display:block; margin:10px 0; padding:14px; background:#229ED9; color:white; text-decoration:none; border-radius:10px; font-weight:700;">
+    ✈️ Написать в Telegram
+  </a>
+
+</div>
   </div>
 </section>
 
@@ -346,9 +366,10 @@ form.addEventListener("submit", async function(event) {
     });
 
     if (response.ok) {
-      alert("✅ Заявка принята! Мы свяжемся с вами в ближайшее время.");
-      form.reset();
-    } else {
+    form.reset();
+    form.style.display = "none";
+    document.getElementById("successMessage").style.display = "block";
+} else {
       alert("Не удалось отправить заявку. Попробуйте ещё раз.");
     }
   } catch (error) {
