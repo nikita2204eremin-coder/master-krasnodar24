@@ -255,21 +255,24 @@
 
   <div class="form-box">
 
-    <form>
+    <form action="https://formspree.io/f/mzepaygl" method="POST">
 
       <input
-        type="text"
-        placeholder="Ваше имя"
-        required
+    type="text"
+    name="Имя"
+    placeholder="Ваше имя"
+    required
+>
+<input
+    type="tel"
+    name="Телефон"
+    placeholder="Номер телефона"
+    required
+>
+      
       >
 
-      <input
-        type="tel"
-        placeholder="Номер телефона"
-        required
-      >
-
-      <select required>
+      <select name="Услуга" required>
         <option value="">Выберите услугу</option>
         <option>Сантехник</option>
         <option>Электрик</option>
@@ -282,8 +285,9 @@
       </select>
 
       <textarea
-        placeholder="Опишите, что необходимо сделать"
-      ></textarea>
+    name="Описание"
+    placeholder="Опишите, что необходимо..."
+></textarea>
 
       <button type="submit">
         ОТПРАВИТЬ ЗАЯВКУ
