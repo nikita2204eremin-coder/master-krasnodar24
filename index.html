@@ -3,177 +3,689 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мастер Краснодар 24/7 — бытовые услуги</title>
+
+  <title>Мастер Краснодар 24/7 — сантехник, электрик, мастер на час</title>
+
+  <meta name="description"
+        content="Бытовые услуги в Краснодаре: сантехник, электрик, сборка мебели, установка техники, мелкий ремонт, кондиционеры, клининг и химчистка.">
+
+  <meta name="theme-color" content="#102a43">
 
   <style>
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: #f5f7fa;
       color: #17202a;
+      line-height: 1.5;
     }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    /* HEADER */
 
     .header {
       background: #102a43;
       color: white;
-      padding: 16px 20px;
-      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0,0,0,.12);
+    }
+
+    .header-inner {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: 800;
+      color: white;
+      font-size: 22px;
+      font-weight: 900;
+      white-space: nowrap;
     }
 
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav a {
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .header-call {
+      background: #ffb000;
+      color: #111 !important;
+      padding: 11px 16px;
+      border-radius: 10px;
+    }
+
+    /* HERO */
+
     .hero {
-      padding: 45px 20px;
-      text-align: center;
-      background: white;
+      background:
+        linear-gradient(135deg, rgba(16,42,67,.97), rgba(16,42,67,.84));
+      color: white;
+      padding: 75px 0 80px;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+      padding: 9px 14px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 22px;
     }
 
     .hero h1 {
-      font-size: 36px;
-      margin: 0 0 15px;
+      font-size: clamp(38px, 7vw, 64px);
+      line-height: 1.04;
+      margin: 0 0 22px;
+      letter-spacing: -1.5px;
     }
 
     .hero p {
-      font-size: 18px;
-      color: #52606d;
-      max-width: 650px;
-      margin: auto;
+      margin: 0;
+      max-width: 700px;
+      font-size: 20px;
+      color: #dbe7f0;
     }
 
-    .badge {
-      display: inline-block;
-      margin-top: 20px;
-      background: #e8f5e9;
-      color: #137333;
-      padding: 9px 15px;
-      border-radius: 30px;
-      font-weight: bold;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
     }
 
-    .main-button {
-      display: block;
-      max-width: 330px;
-      margin: 25px auto 0;
-      padding: 17px;
-      background: #ffb000;
-      color: #111;
-      text-decoration: none;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 22px;
       border-radius: 12px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    .section h2 {
-      text-align: center;
-      font-size: 28px;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 15px;
-      margin-top: 25px;
-    }
-
-    .service {
-      background: white;
-      padding: 22px;
-      border-radius: 15px;
-      box-shadow: 0 3px 12px rgba(0,0,0,.06);
-      font-weight: bold;
-    }
-
-    .service span {
-      display: block;
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .form-box {
-      background: white;
-      max-width: 600px;
-      margin: auto;
-      padding: 25px;
-      border-radius: 18px;
-      box-shadow: 0 3px 15px rgba(0,0,0,.08);
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 14px;
-      margin: 7px 0;
-      border: 1px solid #d8dee4;
-      border-radius: 9px;
       font-size: 16px;
-    }
-
-    textarea {
-      min-height: 100px;
-    }
-
-    button {
-      width: 100%;
+      font-weight: 800;
       border: 0;
-      padding: 16px;
-      background: #ffb000;
-      border-radius: 10px;
-      font-size: 17px;
-      font-weight: bold;
       cursor: pointer;
     }
 
-    .contacts {
-      text-align: center;
-      background: #102a43;
-      color: white;
-      padding: 40px 20px;
+    .btn-primary {
+      background: #ffb000;
+      color: #111;
     }
 
-    .contact-button {
-      display: block;
-      max-width: 350px;
-      margin: 10px auto;
-      padding: 15px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
+    .btn-secondary {
       background: white;
       color: #102a43;
     }
 
-    .telegram {
-      background: #229ED9;
+    .hero-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      margin-top: 30px;
+      color: #e9f1f7;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* COMMON */
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-white {
+      background: white;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 42px;
+    }
+
+    .section-title h2 {
+      margin: 0 0 12px;
+      font-size: clamp(32px, 6vw, 46px);
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: #687786;
+      font-size: 17px;
+    }
+
+    /* TRUST */
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .trust-card {
+      background: white;
+      padding: 26px 22px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(20,40,60,.07);
+    }
+
+    .trust-icon {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .trust-card h3 {
+      font-size: 18px;
+      margin: 0 0 7px;
+    }
+
+    .trust-card p {
+      margin: 0;
+      color: #687786;
+      font-size: 14px;
+    }
+
+    /* SERVICES */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 8px 30px rgba(20,40,60,.07);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(20,40,60,.11);
+    }
+
+    .service-icon {
+      font-size: 36px;
+      margin-bottom: 14px;
+    }
+
+    .service-card h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+    }
+
+    .service-card p {
+      margin: 0 0 16px;
+      font-size: 14px;
+      color: #687786;
+      min-height: 42px;
+    }
+
+    .price {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-weight: 900;
+      color: #102a43;
+    }
+
+    .service-order {
+      color: #d08700;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    /* STEPS */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .step {
+      text-align: center;
+      background: white;
+      padding: 25px 15px;
+      border-radius: 18px;
+      box-shadow: 0 7px 25px rgba(20,40,60,.06);
+    }
+
+    .step-number {
+      width: 45px;
+      height: 45px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      background: #ffb000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      color: #111;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .step span {
+      color: #687786;
+      font-size: 13px;
+    }
+
+    /* GUARANTEE */
+
+    .guarantee {
+      background: #102a43;
+      color: white;
+      border-radius: 24px;
+      padding: 38px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .guarantee-icon {
+      font-size: 56px;
+      flex: 0 0 auto;
+    }
+
+    .guarantee h2 {
+      margin: 0 0 8px;
+      font-size: 30px;
+    }
+
+    .guarantee p {
+      margin: 0;
+      color: #d7e4ed;
+    }
+
+    /* ORDER FORM */
+
+    .order-wrap {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .form-box {
+      background: white;
+      border-radius: 22px;
+      padding: 32px;
+      box-shadow: 0 12px 40px rgba(20,40,60,.1);
+    }
+
+    .field {
+      margin-bottom: 14px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #d6dde3;
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px 16px;
+      font: inherit;
+      color: #17202a;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #ffb000;
+      box-shadow: 0 0 0 3px rgba(255,176,0,.12);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-button {
+      width: 100%;
+      min-height: 58px;
+      border: 0;
+      border-radius: 12px;
+      background: #ffb000;
+      color: #111;
+      font-size: 17px;
+      font-weight: 900;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+
+    .submit-button:disabled {
+      opacity: .7;
+      cursor: wait;
+    }
+
+    .privacy-note {
+      color: #7b8793;
+      font-size: 12px;
+      text-align: center;
+      margin: 14px 0 0;
+    }
+
+    /* SUCCESS */
+
+    #successMessage {
+      display: none;
+      background: #eaf8ee;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    #successMessage h3 {
+      font-size: 30px;
+      margin: 0 0 8px;
+    }
+
+    #successMessage p {
+      color: #465660;
+      margin: 0 0 22px;
+    }
+
+    .success-link {
+      display: block;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 11px;
+      font-weight: 800;
+    }
+
+    .success-phone {
+      background: white;
+      color: #102a43;
+    }
+
+    .success-telegram {
+      background: #229ed9;
       color: white;
     }
 
-    .max {
+    .success-max {
       background: #6c5ce7;
       color: white;
     }
 
-    .footer {
-      text-align: center;
-      padding: 25px;
-      font-size: 14px;
-      color: #667;
+    .again-button {
+      width: 100%;
+      margin-top: 12px;
+      background: transparent;
+      border: 1px solid #aac4b2;
+      color: #245331;
+      padding: 13px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
     }
 
-    @media(max-width:600px) {
-      .hero h1 {
-        font-size: 29px;
+    /* AREAS */
+
+    .areas {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .area {
+      padding: 9px 14px;
+      border-radius: 100px;
+      background: white;
+      box-shadow: 0 4px 15px rgba(20,40,60,.06);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* FAQ */
+
+    .faq {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    details {
+      background: white;
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-bottom: 10px;
+      box-shadow: 0 6px 22px rgba(20,40,60,.05);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    details p {
+      margin: 12px 0 0;
+      color: #687786;
+    }
+
+    /* CONTACTS */
+
+    .contacts {
+      background: #102a43;
+      color: white;
+      padding: 65px 0;
+      text-align: center;
+    }
+
+    .contacts h2 {
+      font-size: 38px;
+      margin: 0 0 8px;
+    }
+
+    .contacts p {
+      margin: 0 0 25px;
+      color: #d7e4ed;
+    }
+
+    .contact-buttons {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .contact-button {
+      display: block;
+      padding: 16px;
+      border-radius: 12px;
+      margin-top: 11px;
+      font-weight: 900;
+    }
+
+    .phone-button {
+      background: white;
+      color: #102a43;
+    }
+
+    .telegram-button {
+      background: #229ed9;
+      color: white;
+    }
+
+    .max-button {
+      background: #6c5ce7;
+      color: white;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      background: #0b1f31;
+      color: #aebbc6;
+      text-align: center;
+      padding: 26px 15px 95px;
+      font-size: 13px;
+    }
+
+    /* MOBILE FIXED CTA */
+
+    .mobile-cta {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        display: none;
+      }
+
+      .trust-grid,
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .guarantee {
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 24px, 1120px);
+      }
+
+      .header-inner {
+        min-height: 62px;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .hero {
+        padding: 52px 0 58px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .section {
+        padding: 55px 0;
+      }
+
+      .trust-grid,
+      .services-grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card p {
+        min-height: auto;
+      }
+
+      .guarantee {
+        display: block;
+        padding: 28px 24px;
+      }
+
+      .guarantee-icon {
+        margin-bottom: 12px;
+      }
+
+      .form-box {
+        padding: 22px 18px;
+      }
+
+      .contacts h2 {
+        font-size: 32px;
+      }
+
+      .mobile-cta {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 8px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        background: white;
+        box-shadow: 0 -5px 20px rgba(0,0,0,.12);
+        z-index: 2000;
+      }
+
+      .mobile-cta a {
+        min-height: 48px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+      }
+
+      .mobile-call {
+        background: #eef2f5;
+        color: #102a43;
+      }
+
+      .mobile-order {
+        background: #ffb000;
+        color: #111;
       }
     }
   </style>
@@ -182,203 +694,634 @@
 <body>
 
 <header class="header">
-  <div class="logo">🔧 МАСТЕР КРАСНОДАР 24/7</div>
+  <div class="container header-inner">
+
+    <a class="logo" href="#">
+      🔧 МАСТЕР КРАСНОДАР 24/7
+    </a>
+
+    <nav class="nav">
+      <a href="#services">Услуги</a>
+      <a href="#how">Как работаем</a>
+      <a href="#order">Оставить заявку</a>
+      <a href="#faq">Вопросы</a>
+
+      <a class="header-call" href="tel:+79654738044">
+        Позвонить
+      </a>
+    </nav>
+
+  </div>
 </header>
 
+
+<main>
+
 <section class="hero">
-  <h1>Домашний мастер в Краснодаре</h1>
 
-  <p>
-    Сантехника, электрика, сборка мебели, установка техники,
-    мелкий ремонт, кондиционеры, клининг и химчистка.
-  </p>
+  <div class="container hero-content">
 
-  <div class="badge">✓ Принимаем заявки ежедневно</div>
+    <div class="hero-badge">
+      ✓ Принимаем заявки ежедневно
+    </div>
 
-  <a class="main-button" href="#order">
-    ОСТАВИТЬ ЗАЯВКУ
-  </a>
+    <h1>
+      Домашний мастер<br>
+      в Краснодаре
+    </h1>
+
+    <p>
+      Поможем подобрать специалиста для бытовых задач:
+      сантехника, электрика, мебель, установка техники,
+      мелкий ремонт, кондиционеры, клининг и химчистка.
+    </p>
+
+    <div class="hero-actions">
+
+      <a class="btn btn-primary" href="#order">
+        ВЫЗВАТЬ МАСТЕРА
+      </a>
+
+      <a class="btn btn-secondary" href="tel:+79654738044">
+        📞 +7 965 473-80-44
+      </a>
+
+    </div>
+
+    <div class="hero-features">
+      <span>✓ Согласование задачи</span>
+      <span>✓ Удобное время выезда</span>
+      <span>✓ Стоимость до начала работ</span>
+    </div>
+
+  </div>
+
 </section>
+
 
 <section class="section">
 
-  <h2>Наши услуги</h2>
+  <div class="container">
 
-  <div class="services">
-
-    <div class="service">
-      <span>🚰</span>
-      Сантехник
+    <div class="section-title">
+      <h2>Почему выбирают нас</h2>
+      <p>
+        Понятный процесс заказа без лишней сложности.
+      </p>
     </div>
 
-    <div class="service">
-      <span>⚡</span>
-      Электрик
-    </div>
+    <div class="trust-grid">
 
-    <div class="service">
-      <span>🪛</span>
-      Сборка мебели
-    </div>
+      <div class="trust-card">
+        <div class="trust-icon">👨‍🔧</div>
+        <h3>Подбор специалиста</h3>
+        <p>Подбираем исполнителя под конкретную задачу клиента.</p>
+      </div>
 
-    <div class="service">
-      <span>🔌</span>
-      Установка техники
-    </div>
+      <div class="trust-card">
+        <div class="trust-icon">💬</div>
+        <h3>Согласование цены</h3>
+        <p>Стоимость работ согласовывается до их выполнения.</p>
+      </div>
 
-    <div class="service">
-      <span>🔨</span>
-      Мелкий ремонт
-    </div>
+      <div class="trust-card">
+        <div class="trust-icon">🕐</div>
+        <h3>Удобное время</h3>
+        <p>Согласовываем дату и время визита мастера.</p>
+      </div>
 
-    <div class="service">
-      <span>❄️</span>
-      Кондиционеры
-    </div>
+      <div class="trust-card">
+        <div class="trust-icon">🛡️</div>
+        <h3>Гарантия</h3>
+        <p>Условия гарантии зависят от конкретного вида работ.</p>
+      </div>
 
-    <div class="service">
-      <span>🧹</span>
-      Клининг
-    </div>
-
-    <div class="service">
-      <span>✨</span>
-      Химчистка
     </div>
 
   </div>
+
 </section>
+
+
+<section class="section section-white" id="services">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Наши услуги</h2>
+      <p>
+        Выберите нужное направление и оставьте заявку.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🚰</div>
+        <h3>Сантехник</h3>
+        <p>Смесители, сифоны, унитазы, течи и другие сантехнические работы.</p>
+        <div class="price">
+          <span>от 990 ₽</span>
+          <a class="service-order" href="#order">Заказать →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <h3>Электрик</h3>
+        <p>Розетки, выключатели, светильники и бытовые электромонтажные работы.</p>
+        <div class="price">
+          <span>от 990 ₽</span>
+          <a class="service-order" href="#order">Заказать →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🪛</div>
+        <h3>Сборка мебели</h3>
+        <p>Шкафы, кровати, столы, комоды и другая мебель.</p>
+        <div class="price">
+          <span>от 1 200 ₽</span>
+          <a class="service-order" href="#order">Заказать →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔌</div>
+        <h3>Установка техники</h3>
+        <p>Подключение и установка бытовой техники.</p>
+        <div class="price">
+          <span>от 1 200 ₽</span>
+          <a class="service-order" href="#order">Заказать →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔨</div>
+        <h3>Мастер на час</h3>
+        <p>Мелкие бытовые работы и помощь по дому.</p>
+        <div class="price">
+          <span>от 990 ₽</span>
+          <a class="service-order" href="#order">Заказать →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">❄️</div>
+        <h3>Кондиционеры</h3>
+        <p>Обслуживание, диагностика и работы с кондиционерами.</p>
+        <div class="price">
+          <span>от 1 500 ₽</span>
+          <a class="service-order" href="#order">Заказать →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🧹</div>
+        <h3>Клининг</h3>
+        <p>Уборка квартир и помещений по предварительному заказу.</p>
+        <div class="price">
+          <span>от 2 500 ₽</span>
+          <a class="service-order" href="#order">Заказать →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Химчистка</h3>
+        <p>Химчистка мягкой мебели и других поверхностей.</p>
+        <div class="price">
+          <span>от 1 500 ₽</span>
+          <a class="service-order" href="#order">Заказать →</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="how">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Как проходит заказ</h2>
+    </div>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-number">1</div>
+        <strong>Заявка</strong>
+        <span>Оставляете контакты на сайте</span>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <strong>Уточнение</strong>
+        <span>Уточняем задачу и детали</span>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <strong>Мастер</strong>
+        <span>Подбираем подходящего специалиста</span>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <strong>Работа</strong>
+        <span>Мастер выполняет согласованные работы</span>
+      </div>
+
+      <div class="step">
+        <div class="step-number">5</div>
+        <strong>Результат</strong>
+        <span>Принимаете выполненную работу</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section section-white">
+
+  <div class="container">
+
+    <div class="guarantee">
+
+      <div class="guarantee-icon">🛡️</div>
+
+      <div>
+        <h2>Гарантия на выполненные работы</h2>
+
+        <p>
+          Условия и срок гарантии зависят от конкретного вида работ
+          и согласовываются при оформлении заказа.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 
 <section class="section" id="order">
 
-  <h2>Оставить заявку</h2>
+  <div class="container order-wrap">
 
-  <div class="form-box">
+    <div class="section-title">
+      <h2>Оставить заявку</h2>
+      <p>
+        Заполните форму — мы свяжемся с вами для уточнения деталей.
+      </p>
+    </div>
 
-    <form id="orderForm" action="https://formspree.io/f/mzepaygl" method="POST">
+    <div class="form-box">
 
-      <input
-    type="text"
-    name="Имя"
-    placeholder="Ваше имя"
-    required
->
-<input
-    type="tel"
-    name="Телефон"
-    placeholder="Номер телефона"
-    required
->
-      
+      <form
+        id="orderForm"
+        action="https://formspree.io/f/mzepaygl"
+        method="POST"
       >
 
-      <select name="Услуга" required>
-        <option value="">Выберите услугу</option>
-        <option>Сантехник</option>
-        <option>Электрик</option>
-        <option>Сборка мебели</option>
-        <option>Установка техники</option>
-        <option>Мелкий ремонт</option>
-        <option>Кондиционеры</option>
-        <option>Клининг</option>
-        <option>Химчистка</option>
-      </select>
+        <div class="field">
+          <label>Ваше имя</label>
+          <input
+            type="text"
+            name="Имя"
+            placeholder="Например, Никита"
+            required
+          >
+        </div>
 
-      <textarea
-    name="Описание"
-    placeholder="Опишите, что необходимо..."
-></textarea>
+        <div class="field">
+          <label>Телефон</label>
+          <input
+            type="tel"
+            name="Телефон"
+            placeholder="+7 ___ ___-__-__"
+            required
+          >
+        </div>
 
-      <button type="submit">
-        ОТПРАВИТЬ ЗАЯВКУ
-      </button>
+        <div class="field">
+          <label>Услуга</label>
 
-    </form>
-<div id="successMessage" style="display:none; margin-top:20px; padding:20px; background:#eaf8ee; border-radius:14px; text-align:center;">
+          <select name="Услуга" required>
+            <option value="">Выберите услугу</option>
+            <option>Сантехник</option>
+            <option>Электрик</option>
+            <option>Сборка мебели</option>
+            <option>Установка техники</option>
+            <option>Мастер на час / мелкий ремонт</option>
+            <option>Кондиционеры</option>
+            <option>Клининг</option>
+            <option>Химчистка</option>
+          </select>
+        </div>
 
-  <div style="font-size:22px; font-weight:700; margin-bottom:10px;">
-    ✅ Заявка принята!
+        <div class="field">
+          <label>Что необходимо сделать?</label>
+
+          <textarea
+            name="Описание"
+            placeholder="Коротко опишите задачу"
+          ></textarea>
+        </div>
+
+        <button class="submit-button" type="submit">
+          ОТПРАВИТЬ ЗАЯВКУ
+        </button>
+
+        <p class="privacy-note">
+          Отправляя заявку, вы соглашаетесь на обработку
+          указанных вами контактных данных для связи по заявке.
+        </p>
+
+      </form>
+
+
+      <div id="successMessage">
+
+        <h3>✅ Заявка принята!</h3>
+
+        <p>
+          Спасибо! Мы свяжемся с вами в ближайшее время.
+        </p>
+
+        <a
+          class="success-link success-phone"
+          href="tel:+79654738044"
+        >
+          📞 Позвонить
+        </a>
+
+        <a
+          class="success-link success-telegram"
+          href="https://t.me/Nik_Yemilin"
+        >
+          ✈️ Написать в Telegram
+        </a>
+
+        <a
+          class="success-link success-max"
+          href="https://max.ru/u/f9LHodD0cOJ8H9JMa7B_PFVygDkT7sP-TmRrgpRCPe8AfZj5TEXb9rVynNY"
+        >
+          💬 Написать в MAX
+        </a>
+
+        <button
+          class="again-button"
+          id="newOrderButton"
+          type="button"
+        >
+          Оставить ещё одну заявку
+        </button>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <div style="font-size:16px; line-height:1.5; margin-bottom:18px;">
-    Спасибо! Мы свяжемся с вами в ближайшее время.
-  </div>
-
-  <a href="tel:+79654738044"
-     style="display:block; margin:10px 0; padding:14px; background:white; color:#102a43; text-decoration:none; border-radius:10px; font-weight:700;">
-    📞 Позвонить
-  </a>
-
-  <a href="https://t.me/Nik_Yemilin"
-     style="display:block; margin:10px 0; padding:14px; background:#229ED9; color:white; text-decoration:none; border-radius:10px; font-weight:700;">
-    ✈️ Написать в Telegram
-  </a>
-
-</div>
-  </div>
 </section>
+
+
+<section class="section section-white">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Работаем по Краснодару</h2>
+      <p>
+        Уточните адрес при оформлении заявки.
+      </p>
+    </div>
+
+    <div class="areas">
+      <span class="area">Центр</span>
+      <span class="area">Фестивальный</span>
+      <span class="area">Юбилейный</span>
+      <span class="area">Гидрострой</span>
+      <span class="area">Комсомольский</span>
+      <span class="area">Российский</span>
+      <span class="area">Немецкая деревня</span>
+      <span class="area">Новознаменский</span>
+      <span class="area">Прикубанский</span>
+      <span class="area">Карасунский</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="faq">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Частые вопросы</h2>
+    </div>
+
+    <div class="faq">
+
+      <details>
+        <summary>Сколько стоит вызов мастера?</summary>
+        <p>
+          Цена зависит от конкретной задачи. Предварительная стоимость
+          согласовывается после уточнения деталей заказа.
+        </p>
+      </details>
+
+      <details>
+        <summary>Когда может приехать мастер?</summary>
+        <p>
+          Время визита зависит от загрузки и вида работ.
+          Мы согласуем удобный вариант после получения заявки.
+        </p>
+      </details>
+
+      <details>
+        <summary>Как происходит оплата?</summary>
+        <p>
+          Порядок и способ оплаты согласовываются при оформлении заказа.
+        </p>
+      </details>
+
+      <details>
+        <summary>Есть ли гарантия?</summary>
+        <p>
+          Да, для ряда работ предусмотрена гарантия.
+          Конкретный срок зависит от характера выполненной работы.
+        </p>
+      </details>
+
+      <details>
+        <summary>Можно заказать сразу несколько работ?</summary>
+        <p>
+          Да. Опишите все задачи в поле комментария,
+          и мы уточним детали при связи.
+        </p>
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
 
 <section class="contacts">
 
-  <h2>Нужно срочно?</h2>
+  <div class="container">
 
-  <p>Свяжитесь с нами напрямую</p>
+    <h2>Нужно срочно?</h2>
 
-  <a class="contact-button"
-     href="tel:+79654738044">
-     📞 Позвонить
-  </a>
+    <p>
+      Свяжитесь с нами напрямую удобным способом.
+    </p>
 
-  <a class="contact-button telegram"
-     href="https://t.me/Nik_Yemilin">
-     ✈️ Написать в Telegram
-  </a>
+    <div class="contact-buttons">
 
-  <a class="contact-button max"
-     href="https://max.ru/u/f9LHodD0cOJ8H9JMa7B_PFVygDkT7sP-TmRrgpRCPe8AfZj5TEXb9rVynNY">
-     💬 Написать в MAX
-  </a>
+      <a
+        class="contact-button phone-button"
+        href="tel:+79654738044"
+      >
+        📞 Позвонить
+      </a>
+
+      <a
+        class="contact-button telegram-button"
+        href="https://t.me/Nik_Yemilin"
+      >
+        ✈️ Написать в Telegram
+      </a>
+
+      <a
+        class="contact-button max-button"
+        href="https://max.ru/u/f9LHodD0cOJ8H9JMa7B_PFVygDkT7sP-TmRrgpRCPe8AfZj5TEXb9rVynNY"
+      >
+        💬 Написать в MAX
+      </a>
+
+    </div>
+
+  </div>
 
 </section>
 
+</main>
+
+
 <footer class="footer">
-  © 2026 Мастер Краснодар 24/7
+  © 2026 Мастер Краснодар 24/7<br>
+  Сервис бытовых услуг в Краснодаре
 </footer>
+
+
+<div class="mobile-cta">
+
+  <a
+    class="mobile-call"
+    href="tel:+79654738044"
+  >
+    📞 Позвонить
+  </a>
+
+  <a
+    class="mobile-order"
+    href="#order"
+  >
+    Вызвать мастера
+  </a>
+
+</div>
+
+
 <script>
-const form = document.getElementById("orderForm");
+  const form = document.getElementById("orderForm");
+  const successMessage = document.getElementById("successMessage");
+  const newOrderButton = document.getElementById("newOrderButton");
 
-form.addEventListener("submit", async function(event) {
-  event.preventDefault();
+  form.addEventListener("submit", async function(event) {
 
-  const data = new FormData(form);
-  const button = form.querySelector('button[type="submit"]');
+    event.preventDefault();
 
-  button.disabled = true;
-  button.textContent = "ОТПРАВЛЯЕМ...";
+    const data = new FormData(form);
+    const button = form.querySelector('button[type="submit"]');
 
-  try {
-    const response = await fetch(form.action, {
-      method: "POST",
-      body: data,
-      headers: {
-        "Accept": "application/json"
+    button.disabled = true;
+    button.textContent = "ОТПРАВЛЯЕМ...";
+
+    try {
+
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+
+        form.reset();
+        form.style.display = "none";
+        successMessage.style.display = "block";
+
+      } else {
+
+        alert("Не удалось отправить заявку. Попробуйте ещё раз.");
+
       }
-    });
 
-    if (response.ok) {
-    form.reset();
-    form.style.display = "none";
-    document.getElementById("successMessage").style.display = "block";
-} else {
-      alert("Не удалось отправить заявку. Попробуйте ещё раз.");
+    } catch (error) {
+
+      alert("Ошибка соединения. Попробуйте ещё раз.");
+
     }
-  } catch (error) {
-    alert("Ошибка соединения. Попробуйте ещё раз.");
-  }
 
-  button.disabled = false;
-  button.textContent = "ОТПРАВИТЬ ЗАЯВКУ";
-});
+    button.disabled = false;
+    button.textContent = "ОТПРАВИТЬ ЗАЯВКУ";
+
+  });
+
+
+  newOrderButton.addEventListener("click", function() {
+
+    successMessage.style.display = "none";
+    form.style.display = "block";
+
+    document
+      .getElementById("order")
+      .scrollIntoView({
+        behavior: "smooth"
+      });
+
+  });
 </script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Мастер Краснодар 24/7",
+  "telephone": "+79654738044",
+  "areaServed": "Краснодар",
+  "description": "Сервис бытовых услуг в Краснодаре: сантехника, электрика, сборка мебели, установка техники, мелкий ремонт, кондиционеры, клининг и химчистка."
+}
+</script>
+
 </body>
 </html>
