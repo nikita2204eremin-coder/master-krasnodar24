@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мастер Краснодар 24/7 — бытовые услуги</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #17202a;
+    }
+
+    .header {
+      background: #102a43;
+      color: white;
+      padding: 16px 20px;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .hero {
+      padding: 45px 20px;
+      text-align: center;
+      background: white;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin: 0 0 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #52606d;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 20px;
+      background: #e8f5e9;
+      color: #137333;
+      padding: 9px 15px;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    .main-button {
+      display: block;
+      max-width: 330px;
+      margin: 25px auto 0;
+      padding: 17px;
+      background: #ffb000;
+      color: #111;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 28px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .service {
+      background: white;
+      padding: 22px;
+      border-radius: 15px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.06);
+      font-weight: bold;
+    }
+
+    .service span {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .form-box {
+      background: white;
+      max-width: 600px;
+      margin: auto;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 3px 15px rgba(0,0,0,.08);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 14px;
+      margin: 7px 0;
+      border: 1px solid #d8dee4;
+      border-radius: 9px;
+      font-size: 16px;
+    }
+
+    textarea {
+      min-height: 100px;
+    }
+
+    button {
+      width: 100%;
+      border: 0;
+      padding: 16px;
+      background: #ffb000;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .contacts {
+      text-align: center;
+      background: #102a43;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .contact-button {
+      display: block;
+      max-width: 350px;
+      margin: 10px auto;
+      padding: 15px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      background: white;
+      color: #102a43;
+    }
+
+    .telegram {
+      background: #229ED9;
+      color: white;
+    }
+
+    .max {
+      background: #6c5ce7;
+      color: white;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+      color: #667;
+    }
+
+    @media(max-width:600px) {
+      .hero h1 {
+        font-size: 29px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">🔧 МАСТЕР КРАСНОДАР 24/7</div>
+</header>
+
+<section class="hero">
+  <h1>Домашний мастер в Краснодаре</h1>
+
+  <p>
+    Сантехника, электрика, сборка мебели, установка техники,
+    мелкий ремонт, кондиционеры, клининг и химчистка.
+  </p>
+
+  <div class="badge">✓ Принимаем заявки ежедневно</div>
+
+  <a class="main-button" href="#order">
+    ОСТАВИТЬ ЗАЯВКУ
+  </a>
+</section>
+
+<section class="section">
+
+  <h2>Наши услуги</h2>
+
+  <div class="services">
+
+    <div class="service">
+      <span>🚰</span>
+      Сантехник
+    </div>
+
+    <div class="service">
+      <span>⚡</span>
+      Электрик
+    </div>
+
+    <div class="service">
+      <span>🪛</span>
+      Сборка мебели
+    </div>
+
+    <div class="service">
+      <span>🔌</span>
+      Установка техники
+    </div>
+
+    <div class="service">
+      <span>🔨</span>
+      Мелкий ремонт
+    </div>
+
+    <div class="service">
+      <span>❄️</span>
+      Кондиционеры
+    </div>
+
+    <div class="service">
+      <span>🧹</span>
+      Клининг
+    </div>
+
+    <div class="service">
+      <span>✨</span>
+      Химчистка
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="order">
+
+  <h2>Оставить заявку</h2>
+
+  <div class="form-box">
+
+    <form>
+
+      <input
+        type="text"
+        placeholder="Ваше имя"
+        required
+      >
+
+      <input
+        type="tel"
+        placeholder="Номер телефона"
+        required
+      >
+
+      <select required>
+        <option value="">Выберите услугу</option>
+        <option>Сантехник</option>
+        <option>Электрик</option>
+        <option>Сборка мебели</option>
+        <option>Установка техники</option>
+        <option>Мелкий ремонт</option>
+        <option>Кондиционеры</option>
+        <option>Клининг</option>
+        <option>Химчистка</option>
+      </select>
+
+      <textarea
+        placeholder="Опишите, что необходимо сделать"
+      ></textarea>
+
+      <button type="submit">
+        ОТПРАВИТЬ ЗАЯВКУ
+      </button>
+
+    </form>
+
+  </div>
+</section>
+
+<section class="contacts">
+
+  <h2>Нужно срочно?</h2>
+
+  <p>Свяжитесь с нами напрямую</p>
+
+  <a class="contact-button"
+     href="tel:+79654738044">
+     📞 Позвонить
+  </a>
+
+  <a class="contact-button telegram"
+     href="https://t.me/Nik_Yemilin">
+     ✈️ Написать в Telegram
+  </a>
+
+  <a class="contact-button max"
+     href="https://max.ru/u/f9LHodD0cOJ8H9JMa7B_PFVygDkT7sP-TmRrgpRCPe8AfZj5TEXb9rVynNY">
+     💬 Написать в MAX
+  </a>
+
+</section>
+
+<footer class="footer">
+  © 2026 Мастер Краснодар 24/7
+</footer>
+
+</body>
+</html>
